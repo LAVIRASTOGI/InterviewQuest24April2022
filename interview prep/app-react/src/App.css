@@ -1,0 +1,38 @@
+.App {
+  text-align: center;
+}
+.flexbox{
+  display: flex;
+ 
+}
+.flexcontainer12,
+.flexcontainer21{
+  background-color: black;
+  color: white;
+  width: 40%;
+  margin: 2rem ;
+
+}
+
+.placeholderee{
+  display: inline-block;
+  position: relative;
+}
+.placeholdertext{
+  opacity: 0.5; 
+ border-bottom: 2px solid #C4C4C4;
+}
+.arrow-down{
+  width: 0; 
+  height: 0; 
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  display: inline-block;
+  border-top: 12px solid #C4C4C4;
+  position: absolute;
+   left: 50%;
+ transform: translate(-50%);
+}
+
+
+
