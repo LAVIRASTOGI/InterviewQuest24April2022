@@ -187,19 +187,3 @@ const numbers = [1, 266, 3, 5, 8]
 // console.log(c);
 
 
-
-const input = [
-  ['a', 'b', 'c'],
-  ['c', 'd', 'e'],
-  ['e', 'd', 'f'],
-];
-
-
-const v=[9,8,9,8]
-let c=v.reduce((prev,curr)=>prev.includes(curr)?prev:[...prev,curr],[])
-
-console.log(c)
-// // // our output should be: {a: 1, b: 1, c: 2, d: 2, e: 2, f: 1}
-// let x = input.reduce((prev, current) => [...prev,...current], [])
-// let v=x.reduce((prev,curr)=>prev[curr]?{...prev,[curr]:++prev[curr]}:{...prev,[curr]:1},{})
-// console.log(v)
