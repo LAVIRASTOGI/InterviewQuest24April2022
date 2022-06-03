@@ -32,3 +32,26 @@ var isPalindrome = function(s) {
  };
  console.log(isPalindrome('A man, a plan, a canal: Panama'))
  console.log(isPalindrome('ab_a'))
+
+
+ //another way using left right pointer
+ 
+var isPalindrome = function(s) {
+    let regex =/[\W_]*/g
+    s=s.replace(regex,'').toLowerCase();
+    let left=0;
+    let right=s.length-1;
+    let flag=false;
+    while(left<right){
+        if(s[left]!=s[right]){
+           flag=false
+        }else{
+            flag=true
+        }
+        left++;
+        right--;
+    }
+    return flag
+ };
+ console.log(isPalindrome('cbbgbu'))
+ console.log(isPalindrome('ab_a'))
