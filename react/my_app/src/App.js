@@ -1,9 +1,12 @@
 
+import ImperativeRefParent from './imperativeRefParent';
 import ReactMemoEaxmple from './ReactMemoEaxmple';
 import ReactMemoParent from './ReactMemoParent';
 import ControlledComponent from './TestComponent';
 import UnControlledComponent from './UnControlledComponent';
 import UseMemoExample from './UseMemoExample';
+import UseRefExample from './useRefExample';
+import UseREFFowardRefEx from './UseREFFowardRefEx';
 
 function App() {
   return (
@@ -16,7 +19,16 @@ function App() {
       {/* <UseMemoExample></UseMemoExample> */}
 
       {/* React.Memo  example*/}
-     <ReactMemoParent></ReactMemoParent>
+     {/* <ReactMemoParent></ReactMemoParent> */}
+
+     {/* useref simple example */}
+       {/* <UseRefExample></UseRefExample> */}
+
+       {/* useref and fowardref */}
+       {/* <UseREFFowardRefEx></UseREFFowardRefEx> */}
+
+       {/* Imperative and Ref Parent and child */}
+       <ImperativeRefParent></ImperativeRefParent>
     </div>
   );
 }
