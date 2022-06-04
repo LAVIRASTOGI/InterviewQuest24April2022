@@ -1,11 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
-import TestComponent from './TestComponent';
+
+import ReactMemoEaxmple from './ReactMemoEaxmple';
+import ReactMemoParent from './ReactMemoParent';
+import ControlledComponent from './TestComponent';
+import UnControlledComponent from './UnControlledComponent';
+import UseMemoExample from './UseMemoExample';
 
 function App() {
   return (
     <div className="App">
-      <TestComponent></TestComponent>
+      {/* controlled uncontrolled component */}
+      {/* <ControlledComponent></ControlledComponent>
+      <UnControlledComponent></UnControlledComponent> */}
+
+      {/* use memo example */}
+      {/* <UseMemoExample></UseMemoExample> */}
+
+      {/* React.Memo  example*/}
+     <ReactMemoParent></ReactMemoParent>
     </div>
   );
 }
