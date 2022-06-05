@@ -1,4 +1,6 @@
 
+import HOCCounter from './HOCCounter';
+import HOCHover from './HOCHover';
 import ImperativeRefParent from './imperativeRefParent';
 import ReactMemoEaxmple from './ReactMemoEaxmple';
 import ReactMemoParent from './ReactMemoParent';
@@ -28,7 +30,12 @@ function App() {
        {/* <UseREFFowardRefEx></UseREFFowardRefEx> */}
 
        {/* Imperative and Ref Parent and child */}
-       <ImperativeRefParent></ImperativeRefParent>
+       {/* <ImperativeRefParent></ImperativeRefParent> */}
+
+
+       {/* HOC example */}
+       <HOCHover name='chhabi'></HOCHover>
+       <HOCCounter name='lavi'></HOCCounter>
     </div>
   );
 }
