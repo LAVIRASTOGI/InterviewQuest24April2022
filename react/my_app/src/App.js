@@ -1,6 +1,9 @@
 
+import ClickCounter from './ClickCounter';
+import CounterRenderProps from './CounterRenderProps';
 import HOCCounter from './HOCCounter';
 import HOCHover from './HOCHover';
+import HoverCounter from './HoverCounter';
 import ImperativeRefParent from './imperativeRefParent';
 import ReactMemoEaxmple from './ReactMemoEaxmple';
 import ReactMemoParent from './ReactMemoParent';
@@ -33,9 +36,15 @@ function App() {
        {/* <ImperativeRefParent></ImperativeRefParent> */}
 
 
-       {/* HOC example */}
-       <HOCHover name='chhabi'></HOCHover>
-       <HOCCounter name='lavi'></HOCCounter>
+       {/* HOC example  way of sharing data /function btw components */}
+       {/* <HOCHover name='chhabi'></HOCHover>
+       <HOCCounter name='lavi'></HOCCounter> */}
+
+
+       {/* Render props -- another way of sharing data /function btw components */}
+       <CounterRenderProps render={(count,clickHandler)=> <ClickCounter count={count} clickHandler={clickHandler} /> }></CounterRenderProps>
+       <CounterRenderProps render={(count,clickHandler)=> <HoverCounter count={count} clickHandler={clickHandler} /> }></CounterRenderProps>
+        {/* every props can act as a function who can return value  */}
     </div>
   );
 }
