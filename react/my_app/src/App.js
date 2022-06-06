@@ -1,5 +1,7 @@
 
 import ClickCounter from './ClickCounter';
+import { UserProvider } from './Context';
+import Context1 from './Context1';
 import CounterRenderProps from './CounterRenderProps';
 import HOCCounter from './HOCCounter';
 import HOCHover from './HOCHover';
@@ -14,6 +16,9 @@ import UseRefExample from './useRefExample';
 import UseREFFowardRefEx from './UseREFFowardRefEx';
 
 function App() {
+  let arrProvider=['lk','up']
+  let name='lavichaavi';
+  let xyProvider={arrProvider,name}
   return (
     <div className="App">
       {/* controlled uncontrolled component */}
@@ -42,9 +47,17 @@ function App() {
 
 
        {/* Render props -- another way of sharing data /function btw components */}
-       <CounterRenderProps render={(count,clickHandler)=> <ClickCounter count={count} clickHandler={clickHandler} /> }></CounterRenderProps>
-       <CounterRenderProps render={(count,clickHandler)=> <HoverCounter count={count} clickHandler={clickHandler} /> }></CounterRenderProps>
+       {/* <CounterRenderProps render={(count,clickHandler)=> <ClickCounter count={count} clickHandler={clickHandler} /> }></CounterRenderProps>
+       <CounterRenderProps render={(count,clickHandler)=> <HoverCounter count={count} clickHandler={clickHandler} /> }></CounterRenderProps> */}
         {/* every props can act as a function who can return value  */}
+
+
+        {/* Context API */}
+        {/* we need to wrap where descent we need to consume this context API STep -2 */}
+        <UserProvider value={xyProvider}>
+        <Context1></Context1>
+        </UserProvider>
+       
     </div>
   );
 }
