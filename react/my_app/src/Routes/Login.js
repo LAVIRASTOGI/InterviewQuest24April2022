@@ -4,7 +4,7 @@ import { useAuth } from './AuthContext';
 
 function Login() {
     let locationVal=useLocation();
-   let [userInput,setUserInput]=useState();
+   let [userInput,setUserInput]=useState('');
    const AuthValue=useAuth();
    const navigate=useNavigate();
 

@@ -93,11 +93,11 @@ function App() {
               <Home />
             </AuthenticationRoute>
           }></Route>
-          <Route path='/about' element={<About />} ></Route>
-          <Route path='/OrderSummary' element={<OrderSummary></OrderSummary>}></Route>
+          <Route path='/about' element={<RequiredAuth><About /></RequiredAuth>} ></Route>
+          <Route path='/OrderSummary' element={<RequiredAuth><OrderSummary></OrderSummary></RequiredAuth>}></Route>
           {/* nested route we can put inside route it will automatically take the route path */}
           {/* parent is a layout components and child inside it is a outlet components which we nested */}
-          <Route path='products' element={<ProductsNested />}>
+          <Route path='products' element={<RequiredAuth><ProductsNested /></RequiredAuth>}>
             {/* index route   -- suppose we do only  http://localhost:3000/products this is parent  here child ke components not displayed 
            so suppose any default child component w eneed to display or render here new prodcts we want to render by deafulat so we add in route with index
           */}
@@ -109,16 +109,16 @@ function App() {
           </Route>
 
           {/* Dynamic routes (diaply user1 user2 user3)  possible to have nested dymanoic routes*/}
-          <Route path='/users' element={<Users></Users>}>
+          <Route path='/users' element={<RequiredAuth><Users></Users></RequiredAuth>}>
             {/* suppose for user 1/user2 /user3 all should go to details user page so use dymanic route */}
-            <Route path=':UserId' element={<Detail></Detail>}></Route>
+            <Route path=':UserId' element={<RequiredAuth><Detail></Detail></RequiredAuth>}></Route>
 
             {/* one more important thing like if u give users/admin and admin is already a route so it will dipaly the exact
          route data first then check weather its a dymaic route or not */}
             {/* exmaple */}
             {/* first check admin is there or not exact path then will go to dymanic route */}
 
-            <Route path='admin' element={<Admin />}></Route>
+            <Route path='admin' element={ <RequiredAuth><Admin /></RequiredAuth>}></Route>
           </Route>
 
           {/* Lazy loading example */}
@@ -131,9 +131,11 @@ function App() {
 
  */}
           <Route path='lazyLoad' element={
+            <RequiredAuth>
             <React.Suspense fallback='Loading..............'>
               <LazyLoad />
             </React.Suspense>
+            </RequiredAuth>
           }></Route>
           {/* this will match when no other route will macth */}
 
