@@ -1,5 +1,6 @@
 import React from 'react'
 import { NavLink, Route, Routes } from 'react-router-dom'
+import HookUsecalback from './HookUsecalback'
 import HookUseEffect from './HookUseEffect'
 import HookUseMultipleReducer from './HookUseMultipleReducer'
 import HookUseReducer from './HookUseReducer'
@@ -16,13 +17,15 @@ function HooksReact() {
     <NavLink to='hookUseReducer'>UsseReducer example</NavLink>
     <NavLink to='hookUseMultipleReducer'>UsseMultipleReducer example</NavLink>
     <NavLink to='hookUseReducerContext'>UsseReducerContext example</NavLink>
-   
+    <NavLink to='hookUsecalback'>hookUsecalback example</NavLink>
+    
     <Routes>
     <Route path='hookUseState' element={<HookUseState/>}></Route>
     <Route path='hookUseEffect' element={<HookUseEffect/>}></Route>
     <Route path='hookUseReducer' element={<HookUseReducer/>}></Route>
     <Route path='hookUseMultipleReducer' element={<HookUseMultipleReducer/>}></Route>
     <Route path='hookUseReducerContext' element={<HookUseReducerContextComponent/>}></Route>
+    <Route path='hookUsecalback' element={<HookUsecalback/>}></Route>
     </Routes>
     </>
   )
