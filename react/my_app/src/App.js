@@ -29,6 +29,7 @@ import NoMatch from './Routes/NoMatch';
 import OrderSummary from './Routes/OrderSummary';
 import ProductsNested from './Routes/ProductsNested';
 import Profile from './Routes/Profile';
+import { ReducerProvider } from './Routes/ReducerContextToghther';
 import RequiredAuth from './Routes/RequiredAuth';
 import ControlledComponent from './TestComponent';
 import UnControlledComponent from './UnControlledComponent';
@@ -44,6 +45,7 @@ function App() {
   let xyProvider = { arrProvider, name }
   return (
     <AuthProvider>
+      <ReducerProvider>
       <div className="App">
         {/* controlled uncontrolled component */}
         {/* <ControlledComponent></ControlledComponent>
@@ -163,6 +165,7 @@ function App() {
 
 
       </div>
+      </ReducerProvider>
     </AuthProvider>
   );
 }
