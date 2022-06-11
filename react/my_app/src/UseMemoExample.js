@@ -3,7 +3,9 @@ import React, { useMemo, useState } from 'react'
 
 
 // React has a built-in hook called useMemo that allows you to memoize expensive functions so that you can 
-// avoid calling them on every render. You simple pass in a function 
+// avoid calling them on every render.
+//useMemo will recompute cached value when dependency has changed
+//You simple pass in a function 
 // and an array of inputs and useMemo will only recompute the memoized 
 // value when one of the inputs has changed. In our example below we have an expensive 
 // function called computeLetterCount (for demo purposes we make it slow by including 
