@@ -7,6 +7,7 @@ import Context1 from './Context1';
 import CounterRenderProps from './CounterRenderProps';
 import HOCCounter from './HOCCounter';
 import HOCHover from './HOCHover';
+import HooksReact from './Hooks/hooks';
 import HoverCounter from './HoverCounter';
 import ImperativeRefParent from './imperativeRefParent';
 // import LazyLoadingExample from './LazyLoadingExample';
@@ -154,6 +155,8 @@ function App() {
 
           <Route path='*' element={<NoMatch />}>
           </Route>
+          {/* react Hooks all 34 lecture codeevolution */}
+          <Route path='/hooks/*' element={<HooksReact></HooksReact>}/>
         </Routes>
 
 

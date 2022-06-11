@@ -46,6 +46,10 @@ function Navbar() {
       <NavLink to='/profile' style={({ isActive }) => styling(isActive)}>Profile</NavLink>
       {!AuthContextVal.user && <NavLink to='/login' style={({ isActive }) => styling(isActive)}>Login</NavLink>}
 
+
+       {/* Hooks */}
+       <NavLink to='/hooks'>Hooks</NavLink>
+
     </nav>
   )
 }
