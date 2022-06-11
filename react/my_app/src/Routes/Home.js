@@ -1,11 +1,13 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useAuth } from './AuthContext';
 
 function Home() {
-    let navigate=useNavigate()
+    let navigate=useNavigate();
+    let userName=useAuth()
   return (
       <>
-        <div>Home</div>
+        <div>Home {userName?.user}</div>
         <button onClick={()=>navigate('/OrderSummary')}>Go to OrderSummary</button>
       </>
   

@@ -14,6 +14,7 @@ import ReactMemoEaxmple from './ReactMemoEaxmple';
 import ReactMemoParent from './ReactMemoParent';
 import About from './Routes/About';
 import { AuthProvider } from './Routes/AuthContext';
+import AuthenticationRoute from './Routes/AuthenticationRoute';
 import Admin from './Routes/Dynamicroute/Admin';
 import Detail from './Routes/Dynamicroute/Detail';
 import Users from './Routes/Dynamicroute/Users';
@@ -87,7 +88,11 @@ function App() {
         <Navbar></Navbar>
         {/*  "Switch" is replaced by routes "Routes" in v6 of rreact-router-dom  */}
         <Routes>
-          <Route path='/' exact element={<Home />}></Route>
+          <Route path='/' exact element={
+            <AuthenticationRoute>
+              <Home />
+            </AuthenticationRoute>
+          }></Route>
           <Route path='/about' element={<About />} ></Route>
           <Route path='/OrderSummary' element={<OrderSummary></OrderSummary>}></Route>
           {/* nested route we can put inside route it will automatically take the route path */}

@@ -4,14 +4,22 @@ let AuthContext = React.createContext();
 
 export function AuthProvider({children}) {
     let [user, setUser] = useState('');
+    let [AuthUserFlAG, setAuthUserFlAG] = useState(false);
 
     const Login = (user) => {
-        setUser(user)
+        //API call will happen
+        setUser(user);
+        setAuthUserFlAG(true)
     }
     const Logout = () => {
         setUser('')
+        setAuthUserFlAG(false)
     }
-    return ( <AuthContext.Provider value={{user,Login,Logout}}>{children}</AuthContext.Provider>
+    const SetUserAuthentication=(user)=>{
+        setUser(user);
+        setAuthUserFlAG(true)
+    }
+    return ( <AuthContext.Provider value={{user,AuthUserFlAG,Login,Logout,SetUserAuthentication}}>{children}</AuthContext.Provider>
     )
    
 }
