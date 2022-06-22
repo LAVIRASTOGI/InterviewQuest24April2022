@@ -1,3 +1,5 @@
+// ised if u want to run dispatch
+import 'babel-polyfill'
 import express from 'express'
 import cors from 'cors'
 import * as React from 'react'
@@ -25,6 +27,12 @@ import App from '../shared/App';
 
 import serialize from "serialize-javascript"
 import { getUserList } from '../inputService';
+import { configureStore } from '@reduxjs/toolkit'
+import UserReducer from '../shared/UserReducer';
+
+import { Provider } from 'react-redux'
+import { Helmet } from 'react-helmet'
+
 
 const app = express()
 
@@ -32,23 +40,34 @@ app.use(cors())
 app.use(express.static('build'))
 
 app.get('*', (req, res, next) => {
+  const store = configureStore({
+    reducer: {
+      // Define a top-level state field named `todos`, handled by `todosReducer`
+      UserData: UserReducer
+    }
+  })
+
   let markup;
   getUserList()
-  .then((data1)=>{
-     markup = ReactDOM.renderToString(
-    <StaticRouter location={req.url} >
-      <App data={data1.data} />
-    </StaticRouter>
-    )
-    res.send(`
+    .then((data1) => {
+      markup = ReactDOM.renderToString(
+        <StaticRouter location={req.url} >
+          <Provider store={store}>
+            <App data={data1.data} />
+          </Provider>
+        </StaticRouter>
+      )
+      const helmet=Helmet.renderStatic();
+      res.send(`
     <!DOCTYPE html>
     <html>
       <head>
-        <title>SSR with React Router</title>
+      ${helmet.title.toString()}
+      ${helmet.meta.toString()}
+
         <script src="/bundle.js" defer></script>
         <link href="/main.css" rel="stylesheet">
         <script>window.__INITIAL_DATA__ = ${serialize(data1.data)}</script>
-        <meta name="description" content="APP JS MAIN APPLICATION" />
       </head>
 
       <body>
@@ -56,7 +75,7 @@ app.get('*', (req, res, next) => {
       </body>
     </html>
   `)
-  })
+    })
   // const name = 'Tyler'
   // const markup = ReactDOM.renderToString(
   //   <StaticRouter location={req.url} >
@@ -64,7 +83,7 @@ app.get('*', (req, res, next) => {
   //   </StaticRouter>
   // )
 
- 
+
 
 })
 

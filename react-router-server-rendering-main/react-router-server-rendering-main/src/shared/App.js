@@ -4,6 +4,7 @@ import './styles.css'
 import Home from './Home'
 import About from './About'
 import { Helmet } from 'react-helmet'
+import ReduxDataLOAD from './ReduxDataLOAD'
 
 export default function App(props) {
   return (
@@ -16,10 +17,12 @@ export default function App(props) {
       <nav>
         <NavLink to='/'>HOME</NavLink>
         <NavLink to='/about'>About</NavLink>
+        <NavLink to='/reduxDataLoad'>REDUX DATA LOAD</NavLink>
       </nav>
       <Routes>
         <Route path='/' element={<Home data={props.data} {...props}/>}></Route>
         <Route path='/about' element={<About />}></Route>
+        <Route path='/reduxDataLoad' element={<ReduxDataLOAD />}></Route>
       </Routes>
     </React.Fragment>
   )
