@@ -28,7 +28,7 @@ function Login() {
         checkBox ? setBtnEnable('true') : setBtnEnable('false')
     }
     const loginHandler = () => {
-        dispatch(loginSentRequest({ "email": { email }, password: { password } }))
+        dispatch(loginSentRequest({ "email": email , password: password }))
             .then(res => {
                 setShow(true);
 

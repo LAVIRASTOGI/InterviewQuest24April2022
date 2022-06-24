@@ -1,17 +1,18 @@
 import React, { useEffect } from 'react'
 import { Container, Table } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
-import { listUser } from '../Redux/Login/LoginActionCreator';
+import { listUser, UserRequestData } from '../Redux/Login/LoginActionCreator';
+import { inputService } from '../Service/inputSevice';
 
 function UserDetails() {
-
     let userdata = useSelector(state => state.LoginData);
     const dispatch = useDispatch();
     useEffect(() => {
-        //get List of users
-     dispatch(listUser())
+        if((userdata?.UsersList.length==0)){
+            dispatch(UserRequestData())
+        }
     }, [])
-    let header = ['FirstName', 'LastName', 'Username']
+    let header = ['Name', 'Pantone Value', 'Year','Color']
     return (
         <Container>
             <h1>USERS</h1>
@@ -27,8 +28,9 @@ function UserDetails() {
                     {userdata?.UsersList?.map((ele) => (
                         <tr key={ele.id}>
                             <td>{ele.name}</td>
-                            <td>{ele.lastName}</td>
-                            <td>{ele.username}</td>
+                            <td>{ele.pantone_value}</td>
+                            <td>{ele.year}</td>
+                            <td>{ele.color}</td>
                         </tr>
 
                     ))}

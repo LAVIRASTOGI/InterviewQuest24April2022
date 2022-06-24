@@ -19,45 +19,62 @@ function loginSuccess(data, user) {
         }
     }
 }
-function loginError(error) {
+function loginError(errorMsg) {
+     let erorMessage=errorMsg||'Something went wrong'
     return {
         type: LOGIN_ERROR,
-        payload: { loading: false, error: error, successMsg: "", userDetails: '', AuthToken: '' }
+        payload: { loading: false, error: erorMessage, successMsg: "", userDetails: '', AuthToken: '' }
     }
 }
 
-export function listUser() {
+export function listUser(Users) {
     return {
         type: USER_LIST_SUCCESS,
         payload: {
             loading: false,
-            usersList: [{ name: 'user1', lastName:'rastogi1', username:'rastogiuser1',id: 12 }, { name: 'user2', lastName:'rastogi2', username:'rastogiuser2', id: 13 }, { name: 'user3', lastName:'rastogi3', username:'rastogiuser3', id: 14 }, { name: 'user5', lastName:'rastogi5', username:'rastogiuser5',id: 15 }]
+            usersList: Users
         }
     }
 }
 export const loginSentRequest = (userData) => {
     return async (dispatch) => {
         let loginUser = '';
+        let UsersData='';
         dispatch(loginRequest())
         try {
             loginUser = await inputService.userLogin(userData);
             dispatch(loginSuccess(loginUser.data, userData));
+           
+
             //get userlist
-           // dispatch(listUser())
+            UsersData = await inputService.userData(loginUser.data.token);
+            dispatch(listUser(UsersData.data.data))
+            return {status:'success',token:loginUser.data.token}
         }
         catch (error) {
-            if (error.response.data.error === 'user not found') {
-                let token=Math.random() ;
-                dispatch(loginSuccess({ token }, userData));
-                //get userlist
-                //dispatch(listUser())
-                return {status:'error',token}
-            } else {
+           
                 dispatch(loginError(error.response.data.error))
                 return {status:'error'}
-            }
+
 
         }
     }
 }
 
+export const UserRequestData = (userData) => {
+    return async (dispatch) => {
+        let UsersData='';
+        dispatch(loginRequest())
+        try {
+            let userToken = JSON.parse(localStorage.getItem('authToken') || {})
+            //get userlist
+            UsersData = await inputService.userData(userToken);
+            dispatch(listUser(UsersData.data.data))
+            return {status:'success'}
+        }
+        catch (error) {
+                dispatch(loginError(error?.response?.data?.error))
+                return {status:'error'}
+        }
+    }
+}

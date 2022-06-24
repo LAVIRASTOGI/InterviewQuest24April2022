@@ -36,6 +36,7 @@ const LoginReducer = (state = initialState, action) => {
         case USER_LIST_SUCCESS:
             return {
                 ...state,
+                loading: false,
                 UsersList: action.payload.usersList
             }
             break;
