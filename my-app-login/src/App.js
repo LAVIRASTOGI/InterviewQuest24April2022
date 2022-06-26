@@ -6,6 +6,7 @@ import { Routes, Route } from 'react-router-dom'
 import UserDetails from './Components/UserDetails';
 import Authenticate from './Components/Authenticate';
 
+// this app contains redux and login 
 function App() {
   return (
     <Container>
