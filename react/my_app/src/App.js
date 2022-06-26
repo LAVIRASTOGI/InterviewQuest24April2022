@@ -39,6 +39,7 @@ import UseREFFowardRefEx from './UseREFFowardRefEx';
 //first step to do dymanic import for lazy loading
 const LazyLoad = React.lazy(() => import('./LazyLoadingExample'))
 
+// this App contains all routers / hooks and context API
 function App() {
   let arrProvider = ['lk', 'up']
   let name = 'lavichaavi';
