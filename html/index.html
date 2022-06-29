@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!-- character encoding -->
     <meta charset="UTF-8">
@@ -11,7 +12,142 @@
     <meta name="description" content="This is my website description">
     <title>Document</title>
 </head>
+
 <body>
-    <h>Hello</h>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        body {
+            height: 2000px;
+        }
+
+        .wrap {
+            width: 800px;
+            border: 1px solid
+        }
+
+        .aside2 {
+            width: 200px;
+            height: 200px;
+            background: aqua;
+            float: left
+        }
+
+        .section2 {
+            width: 600px;
+            height: 200px;
+            background: pink;
+            float: right
+        }
+
+        .clear {
+            clear: both
+        }
+
+        .navbar {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        .navbar ul {
+            display: flex;
+            flex-direction: row;
+            margin: 0;
+            padding: 0;
+            background: black;
+        }
+
+        .navbar li {
+            list-style: none;
+        }
+
+        .navbar li a {
+            text-decoration: none;
+            color: #fff;
+            display: block;
+            padding: 10px 10px;
+        }
+
+        .navbar li a:hover {
+            color: blue;
+            background-color: brown;
+        }
+
+        .parent {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: relative;
+            top: 1rem;
+        }
+
+        .child {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 2rem;
+            height: 2rem;
+            background-color: blue;
+            transform: translate(-50%, -50%);
+        }
+
+        .postionparent {
+            width: 2rem;
+            height: 2rem;
+            background-color: cadetblue;
+            position: fixed;
+            /* will take top /bottom/left/right relative to parent */
+            bottom: 0;
+        }
+
+        .postionparent2 {
+            width: 2rem;
+            height: 2rem;
+            background-color: chocolate;
+            position: sticky;
+            /* will take top /bottom/left/right relative to parent */
+            top: 0;
+        }
+
+
+        .postionparent1 {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background-color: blanchedalmond;
+           
+        }
+    </style>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">ABOUT</a></li>
+            <li><a href="#">CONTACT</a></li>
+            <li><a href="#">FEEDBACK</a></li>
+        </ul>
+    </nav>
+
+    <div class="wrap">
+        <div class="aside2">Aside 2</div>
+        <div class="section2">Section 2</div>
+        <div class="clear"></div>
+    </div>
+    <!-- POSITIONS  ABSOLUTE/RELATIVE-->
+    <div class="parent">
+        <div class="child"></div>
+    </div>
+    <!-- position fixed  element is positioned relative to viewport or the browser window itself -->
+    <div class="postionparent1">
+        <div class="postionparent"></div>
+    </div>
+
+    <!-- postion sticky -- combination of relative then fixed -->
+    <div class="postionparent2"></div>
+
 </body>
+
 </html>
