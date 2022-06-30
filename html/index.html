@@ -12,117 +12,466 @@
     <meta name="description" content="This is my website description">
     <title>Document</title>
 </head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* body {
+        height: 2000px;
+    }
+
+    .wrap {
+        width: 800px;
+        border: 1px solid
+    }
+
+    .aside2 {
+        width: 200px;
+        height: 200px;
+        background: aqua;
+        float: left
+    }
+
+    .section2 {
+        width: 600px;
+        height: 200px;
+        background: pink;
+        float: right
+    }
+
+    .clear {
+        clear: both
+    }
+
+    .navbar {
+        margin: 0;
+        padding: 0;
+
+    }
+
+    .navbar ul {
+        display: flex;
+        flex-direction: row;
+        margin: 0;
+        padding: 0;
+        background: black;
+    }
+
+    .navbar li {
+        list-style: none;
+    }
+
+    .navbar li a {
+        text-decoration: none;
+        color: #fff;
+        display: block;
+        padding: 10px 10px;
+    }
+
+    .navbar li a:hover {
+        color: blue;
+        background-color: brown;
+    }
+
+    .parent {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        position: relative;
+        top: 1rem;
+    }
+
+    .child {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 2rem;
+        height: 2rem;
+        background-color: blue;
+        transform: translate(-50%, -50%);
+    }
+
+    .postionparent {
+        width: 2rem;
+        height: 2rem;
+        background-color: cadetblue;
+        position: fixed;
+        /* will take top /bottom/left/right relative to parent */
+    /* bottom: 0;
+    }
+
+    .postionparent2 {
+        width: 2rem;
+        height: 2rem;
+        background-color: chocolate;
+        position: sticky;
+        /* will take top /bottom/left/right relative to parent */
+    /* top: 0;
+    }
+
+
+    .postionparent1 {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        background-color: blanchedalmond;
+       
+    }  */
+
+    /* flexbox */
+    /* .Flexboxcontainer {
+        background-color: blueviolet;
+        color: #ffff;
+        display: flex;
+        height: 100vh; */
+    /* by default flex direction is row */
+    /* there are 2 axesss cross axis main axis  */
+    /* cross axis */
+    /* align-items: center; */
+    /* mainaxis */
+    /* justify-content: center;
+        flex-wrap: wrap;
+
+    } */
+
+    /* .item {
+        background-color: blanchedalmond;
+        padding: 1rem 2rem;
+        margin: 1rem; */
+    /* flex-grow -- grow size of ellemnet ehrn we exapnd or collapse */
+    /* flex-grow: 1; */
+    /* flex-shrink -- reduce size of ellemnet when we exapnd or collapse */
+    /* flex-shrink: 1; */
+
+    /* }
+    .item1{ */
+    /* flex basics is for setting width */
+    /* flex-basis: 300px; */
+    /* common property for all 3 gow /shrink/basics */
+
+    /* flex:1 0 400px
+    }
+
+    .item3{
+        align-self: flex-end;
+    } */
+
+
+    /* combinators */
+    /* Descendant Combinator -- all h1 under div will be blue */
+    /* .divElement h1{
+      background-color: blue;
+      color: #fff;
+     } */
+
+    /* CHILD Combinator -- all p which is dirrrect child  under div will be pink hich is lavi rastogi vali para */
+    /* .divElement>p {
+        background-color: pink;
+        color: #fff;
+    } */
+
+    /* Adjacent Sibling Combinator -- immediate sibling of the current element here
+     <p>check the attribute</p>
+    */
+    /* .divElement+p {
+        background-color: green;
+        color: #333;
+    } */
+
+
+    /* General Sibling Combinator-- any sibling of the current element here
+     <p>check the attribute</p>
+     <p>lavi chhavi</p>
+    */
+    /* .divElement~p {
+        background-color: aqua;
+        color: #333;
+    } */
+
+    /* specific attribute values */
+    /* input[type='email'] ,  input[type='text']{
+        width: 50%;
+        margin-bottom: 1rem;
+    } */
+    /* .psedoselectors{
+        padding: 5rem;
+    } */
+    /* .psedoselectors li{
+        list-style: none;
+    } */
+    /* last child  15*/
+    /* .psedoselectors li:last-child{
+        background-color: beige;
+    } */
+    /* nth 3rd child 3 */
+    /* .psedoselectors li:nth-child(3){
+        background-color: palegoldenrod;
+    }   */
+    /* EVERY 3RD child  means every third ellment starting from 0 is selcted 3,6,9,12,15*/
+    /* .psedoselectors li:nth-child(3n+0){
+        background-color: palevioletred;
+    }   */
+    /* every third ellemnt starting from 7th elemnet     7,10,13*/
+    /* .psedoselectors li:nth-child(3n+7){
+        background-color: blue;
+    }   */
+    /* odd child ALL ODD ITEMS SAME FOR EVEN nth-child(even) */
+    /* .psedoselectors li:nth-child(odd){
+        background-color: green;
+    } */
+
+    /* .nameLable::after {
+        content: '*';
+        color: brown;
+    } */
+
+
+
+
+    /* create a overlay */
+
+    /* body{ */
+    /* this is important for making overlay perfect */
+    /* background: #333; 
+    } */
+    /* .backgroundOverlay {
+        color: #fff;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    } */
+
+
+    /* create overlay */
+    /* header::before{
+        content: '';
+        background: url('./image.jpg') no-repeat center center/cover;
+        opacity: 0.3;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+       
+    }
+
+    .backgroundOverlay h1 {
+        margin-bottom: 1rem;
+        font-size: 4rem;
+    }
+
+
+    .backgroundOverlay p {
+        margin-bottom: 3rem;
+        font-size: 2rem;
+
+    }
+
+    .backgroundOverlay button {
+        width: 20%;
+        padding: 10px 20px;
+    } */
+
+    /* box shadow */
+
+    /* .container{
+        display: flex;
+    } */
+    /* .box {
+        padding: 1rem;
+        margin: 1rem;
+        background: coral;
+        color: #fff; */
+    /* offset-x | offset-y | color */
+    /* box-shadow: 10px 10px teal; */
+    /* offset-x | offset-y | blur-radius | color */
+    /* box-shadow: 5px 5px 20px teal; */
+    /* Negative values  shows on top */
+    /* box-shadow: -5px -5px 20px teal; */
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+    /* box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 0.3); */
+    /* inset | offset-x | offset-y | color */
+    /* box-shadow: inset -3px -3px teal; */
+    /* Multiple shadows down will be teal and top will be*/
+    /* box-shadow: 3px 3px teal, -3px -3px olive;
+      } */
+
+
+    /* use cutoma varibales in css */
+
+    :root {
+        --backgroundColor: black;
+        --rootColor: #fff;
+    }
+
+    .container {
+        background: var(--backgroundColor);
+        color: var(--rootColor);
+        height: 100vh;
+        width: 100vw;
+        position: relative;
+    }
+
+    .container>div {
+        width: 100px;
+        height: 100px;
+        background-color: aquamarine;
+        position: absolute;
+        /* animation */
+        /* animation-name: animate1;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+        animation-fill-mode: forwards;
+        animation-delay: 2s;
+        animation-direction: alternate;
+        animation-timing-function: ease-in-out; */
+
+        /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+
+        animation: animate2 5s ease-in 2s infinite alternate backwards;
+
+    }
+
+    /* @keyframes animate1 {
+        from {
+            width: 120px;
+            top: 10px;
+            left: 10px;
+        }
+
+        to{
+            width:500px;
+            top:250px;
+            left:250px; 
+        }
+
+    } */
+
+    /* @keyframes animate2 {
+        0% {
+            top: 0;
+            left: 0;
+            background-color: gray;
+        }
+
+        25% {
+            top: 0;
+            left: 200px;
+            background-color: aquamarine;
+
+        }
+
+        50% {
+            top: 200px;
+            left: 200px;
+            background-color: red;
+        }
+
+        75% {
+            top: 200px;
+            left: 0;
+            background-color: pink;
+        }
+
+        100% {
+            top: 0;
+            left: 0;
+            background-color: blue;
+        }
+
+    } */
+</style>
 
 <body>
-    <style>
-        * {
-            margin: 0;
-        }
+    <!-- animation learn -->
+    <!-- <div class="container">
+        <div>
 
-        body {
-            height: 2000px;
-        }
-
-        .wrap {
-            width: 800px;
-            border: 1px solid
-        }
-
-        .aside2 {
-            width: 200px;
-            height: 200px;
-            background: aqua;
-            float: left
-        }
-
-        .section2 {
-            width: 600px;
-            height: 200px;
-            background: pink;
-            float: right
-        }
-
-        .clear {
-            clear: both
-        }
-
-        .navbar {
-            margin: 0;
-            padding: 0;
-
-        }
-
-        .navbar ul {
-            display: flex;
-            flex-direction: row;
-            margin: 0;
-            padding: 0;
-            background: black;
-        }
-
-        .navbar li {
-            list-style: none;
-        }
-
-        .navbar li a {
-            text-decoration: none;
-            color: #fff;
-            display: block;
-            padding: 10px 10px;
-        }
-
-        .navbar li a:hover {
-            color: blue;
-            background-color: brown;
-        }
-
-        .parent {
-            width: 200px;
-            height: 200px;
-            background-color: red;
-            position: relative;
-            top: 1rem;
-        }
-
-        .child {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 2rem;
-            height: 2rem;
-            background-color: blue;
-            transform: translate(-50%, -50%);
-        }
-
-        .postionparent {
-            width: 2rem;
-            height: 2rem;
-            background-color: cadetblue;
-            position: fixed;
-            /* will take top /bottom/left/right relative to parent */
-            bottom: 0;
-        }
-
-        .postionparent2 {
-            width: 2rem;
-            height: 2rem;
-            background-color: chocolate;
-            position: sticky;
-            /* will take top /bottom/left/right relative to parent */
-            top: 0;
-        }
+        </div>
+    </div> -->
 
 
-        .postionparent1 {
-            position: relative;
-            width: 200px;
-            height: 200px;
-            background-color: blanchedalmond;
-           
-        }
-    </style>
+    <!-- <div class="container">
+        <div class="box">
+          <h3>Heading</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, vel.
+          </p>
+        </div>
+        <div class="box">
+          <h3>Heading</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, vel.
+          </p>
+        </div>
+        <div class="box">
+          <h3>Heading</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, vel.
+          </p>
+        </div>
+      </div> -->
 
-    <nav class="navbar">
+    <!-- overlAY -->
+    <!-- <header class="backgroundOverlay">
+        <h1>Header</h1>
+        <p>Some heading Some heading to checkout overlay </p>
+        <button>Click me</button>
+
+    </header> -->
+
+    <!-- use of after and before--
+    <label class="nameLable">Name</label>
+    <input type="text"> -->
+
+    <!-- Nth pseduo selectors -->
+
+    <!-- <ul class="psedoselectors">
+        <li>Item1</li>
+        <li>Item2</li>
+        <li>Item3</li>
+        <li>Item4</li>
+        <li>Item5</li>
+        <li>Item6</li>
+        <li>Item7</li>
+        <li>Item8</li>
+        <li>Item9</li>
+        <li>Item10</li>
+        <li>Item11</li>
+        <li>Item12</li>
+        <li>Item13</li>
+        <li>Item14</li>
+        <li>Item15</li>
+    </ul> -->
+
+
+
+    <!-- combinatorss -->
+    <!-- <div class="divElement">
+        <h1>Hello check 1</h1>
+        <p> lavi rastogi  lkkkkkkkkkkkkkk
+            <span>
+                <h1>check <p>dddd</p>cehk</h1>
+            </span>   
+        </p>
+        <h1>Hello check 1</h1>
+    </div>
+    <p>check the attribute</p>
+    <h1>hello boss</h1>
+    <p>lavi chhavi</p>
+
+    <input type="email" placeholder="email" />
+    <input type="text" placeholder="name" />
+    <input type="submit" placeholder="button" /> -->
+
+    <!-- <nav class="navbar">
         <ul>
             <li><a href="#">HOME</a></li>
             <li><a href="#">ABOUT</a></li>
@@ -136,17 +485,36 @@
         <div class="section2">Section 2</div>
         <div class="clear"></div>
     </div>
-    <!-- POSITIONS  ABSOLUTE/RELATIVE-->
-    <div class="parent">
+     POSITIONS  ABSOLUTE/RELATIVE-->
+    <!-- <div class="parent">
         <div class="child"></div>
-    </div>
+    </div> -->
     <!-- position fixed  element is positioned relative to viewport or the browser window itself -->
-    <div class="postionparent1">
+    <!-- <div class="postionparent1">
         <div class="postionparent"></div>
-    </div>
+    </div> -->
 
     <!-- postion sticky -- combination of relative then fixed -->
-    <div class="postionparent2"></div>
+    <!-- <div class="postionparent2"></div>  -->
+
+
+    <!-- flexbox main and important -->
+    <!-- <div class="Flexboxcontainer">
+        <div class="item1 item">
+            <h1>Item1</h1>
+        </div>
+        <div class="item2 item">
+            <h1>Item2</h1>
+        </div>
+        <div class="item3 item">
+            <h1>Item3</h1>
+        </div>
+
+    </div> -->
+
+
+
+
 
 </body>
 
