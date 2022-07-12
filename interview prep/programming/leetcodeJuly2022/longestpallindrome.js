@@ -41,8 +41,6 @@ var longestPalindrome = function (s) {
         pallindromeFunc(s, i, i + 1)
     }
 
-
-
     return s.slice(startIndex, maxlength + startIndex)
 };
 
