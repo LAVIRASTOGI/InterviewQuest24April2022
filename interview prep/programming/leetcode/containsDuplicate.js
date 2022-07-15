@@ -16,14 +16,12 @@
 // Output: true
 
 var containsDuplicate = function (nums) {
-    let newArr = [];
-    for (let i = 0; i < nums.length; i++) {
-        if (newArr.includes(nums[i])) {
-            return true;
-        } else {
-            newArr.push(nums[i])
-        }
+   for(let i=0;i<nums.length;i++){
+    if(nums.indexOf(nums[i],i+1)!==-1){
+        return true
     }
-
+   }
+   
     return false
+
 };
