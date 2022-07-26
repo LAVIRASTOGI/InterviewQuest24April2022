@@ -25,30 +25,30 @@ const AppInterview1 = () => {
     }
 
     const addClassNamehandler=()=>{
-        let classnamesVal=''
+        let classnamesVal='textAreaStyle'
         if(italicHandler&&boldHandler){
-            classnamesVal ='boldVal italicVal'
+            classnamesVal ='textAreaStyle boldVal italicVal'
         }else  if(boldHandler){
-            classnamesVal ='boldVal'
+            classnamesVal ='textAreaStyle boldVal'
         } else if(italicHandler){
-            classnamesVal ='italicVal'
+            classnamesVal ='textAreaStyle italicVal'
         }else{
-            classnamesVal=''
+            classnamesVal='textAreaStyle'
         }
         return classnamesVal
     }
 
     return (<div className='container'>
         <h1>Welcome to comments</h1>
-        {hidePost?'':<h1 className='header'>{postval}<span onClick={hideHandler}><FaRegTimesCircle /></span></h1>}
+        {hidePost?'':<p className='header'>{postval}<span onClick={hideHandler}><FaRegTimesCircle /></span></p>}
         
         <textarea placeholder='Enter text' value={textVal} cols="50" rows="8"  className={addClassNamehandler()}    
         onChange={(e) => setTextVal(e.target.value)}></textarea>
         <div className='buttons'>
-            <button className='buttonstyle' onClick={()=>setitalicHandler((val)=>!val)}>ITALIC</button>
-            <button className='buttonstyle' onClick={()=>setBoldHandler((val)=>!val)}>BOLD</button>
-            <button className='buttonstyle' onClick={postCommentHandler}>POST</button>
-            <button className='buttonstyle' onClick={clearCommentHandler}>CLEAR</button>
+            <button className='buttonstyle buttonstyle1' onClick={()=>setitalicHandler((val)=>!val)}>ITALIC</button>
+            <button className='buttonstyle buttonstyle1' onClick={()=>setBoldHandler((val)=>!val)}>BOLD</button>
+            <button className='buttonstyle buttonstyle4' onClick={clearCommentHandler}>CLEAR</button>
+            <button className='buttonstyle buttonstyle3' onClick={postCommentHandler}>POST</button>
         </div>
     </div>)
 }

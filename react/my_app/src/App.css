@@ -46,8 +46,10 @@
   align-items: center;
 }
 .header{
-  background-color: #61dafb;
+  background-color: #808080;
+  color: #ffff;
   padding: 3%;
+   width:  40rem;
   position: relative;
 }
 .header span{
@@ -55,19 +57,35 @@
   top: 10px;
   right: 10px
 }
+.textAreaStyle{
+  width:  40rem;
+  overflow-wrap: break-word;
+}
 .buttons{
 display: flex;
 margin-top: 1rem;
-
-
+width:  40rem;
+justify-content: center;
 }
 .buttonstyle{
   margin: 0.5rem;
   padding: 5px 1rem;
+  color: #ffff;
+  font-weight: bold;
+  border: 1px solid gray;
 }
 .boldVal{
   font-weight: bold;
 }
 .italicVal{
   font-style: italic;
+}
+.buttonstyle1{
+  background-color: #b4ddf7;
+}
+.buttonstyle4{
+  background-color: red;
+}
+.buttonstyle3{
+  background-color: #082c6d;
 }
