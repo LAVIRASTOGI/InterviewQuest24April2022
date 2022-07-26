@@ -10,13 +10,13 @@ import App6 from './App6';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    // <BrowserRouter>
-    // <App />
-    // </BrowserRouter>
+    <BrowserRouter>
+    <App />
+    </BrowserRouter>
     // <App1/>
     // <App3/>
     // <CRUD/>
-    <App6/>
+   // <App6/>
 );
 
 // If you want to start measuring performance in your app, pass a function

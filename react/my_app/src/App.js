@@ -69,8 +69,8 @@ function App() {
 
 
         {/* HOC example  way of sharing data /function btw components */}
-        {/* <HOCHover name='chhabi'></HOCHover>
-       <HOCCounter name='lavi'></HOCCounter> */}
+        <HOCHover name='chhabi'></HOCHover>
+       <HOCCounter name='lavi'></HOCCounter>
 
 
         {/* Render props -- another way of sharing data /function btw components */}
