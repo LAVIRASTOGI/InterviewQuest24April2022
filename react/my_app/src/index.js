@@ -7,16 +7,18 @@ import App1 from './App1';
 import App3 from './App3'
 import CRUD from './CRUD';
 import App6 from './App6';
+import AppInterview1 from './AppInterview1';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <BrowserRouter>
-    <App />
-    </BrowserRouter>
+    // <BrowserRouter>
+    // <App />
+    // </BrowserRouter>
     // <App1/>
     // <App3/>
     // <CRUD/>
    // <App6/>
+   <AppInterview1/>
 );
 
 // If you want to start measuring performance in your app, pass a function
